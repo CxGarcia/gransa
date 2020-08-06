@@ -1,0 +1,19 @@
+.cls,
+.cls-2 {
+  fill: none;
+  stroke-miterlimit: 10;
+}
+.cls {
+  stroke: #ff0;
+  stroke-width: 6px;
+}
+.cls-2 {
+  stroke: #000;
+}
+
+.svg {
+  box-sizing: border-box;
+  width: 100vw;
+  padding-left: 8rem;
+  z-index: -10;
+}

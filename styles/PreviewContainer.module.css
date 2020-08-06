@@ -1,0 +1,22 @@
+.container {
+  width: 100vw;
+  height: fit-content;
+  padding: 1rem 5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  border-radius: 5px;
+  background-color: rgba(34, 33, 33, 0.6);
+}
+
+@media (min-width: 800px) {
+  .container {
+    padding: 1rem 1rem 1rem 8rem;
+    margin-bottom: 2em;
+    width: 75vw;
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 10px;
+    align-items: flex-start;
+    flex-flow: row nowrap;
+  }
+}

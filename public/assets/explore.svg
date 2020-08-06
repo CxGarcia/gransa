@@ -1,0 +1,31 @@
+<svg
+  id="Layer_1"
+  data-name="Layer 1"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 11.83 10.07"
+  width="30"
+>
+  <defs>
+    <style>
+      .cls-1,
+      .cls-2 {
+        fill: none;
+        stroke: #434343;
+        stroke-linejoin: round;
+      }
+      .cls-1 {
+        stroke-width: 0.5px;
+      }
+      .cls-2 {
+        stroke-width: 0.25px;
+      }
+    </style>
+  </defs>
+  <title>Explore</title>
+  <polygon
+    class="cls-1"
+    points="11.58 9.82 7.89 9.82 3.94 8.17 0.25 9.69 0.25 1.75 3.93 0.25 7.88 1.95 11.58 1.95 11.58 9.82"
+  />
+  <line class="cls-2" x1="3.89" y1="0.25" x2="3.89" y2="8.19" />
+  <line class="cls-2" x1="7.89" y1="1.95" x2="7.89" y2="9.88" />
+</svg>

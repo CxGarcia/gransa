@@ -1,0 +1,14 @@
+.svg {
+  /* position: absolute; */
+  margin-bottom: -1em;
+}
+
+.cls {
+  fill: #040504;
+  overflow: hidden;
+}
+
+.fill {
+  height: 50vh;
+  background-color: #000;
+}

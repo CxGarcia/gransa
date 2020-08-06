@@ -1,0 +1,89 @@
+.logo:hover,
+.main_menu li:hover {
+  transform: scale(0.9);
+}
+
+.nav-row a {
+  text-decoration: none;
+}
+
+.main_menu {
+  position: fixed;
+  display: flex;
+  flex-flow: column nowrap;
+  outline: none;
+  align-items: flex-start;
+  left: 1em;
+  top: 1em;
+  height: fit-content;
+  padding: 0 0.5em;
+  overflow: visible;
+  border-left: 2px solid #434343;
+  border-radius: 2px;
+}
+
+.main_menu ul {
+  list-style: none;
+  margin: 0;
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+
+.main_menu li,
+.logo {
+  transition: all 0.4s ease-in-out;
+}
+
+.menu_icon {
+  cursor: pointer;
+  box-sizing: border-box;
+  -webkit-filter: drop-shadow(1px 0px 0px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(2px 1px 1px rgba(72, 72, 72, 0.6));
+}
+
+.main_menu li {
+  margin: 2em 0;
+}
+
+/* .cls1 {
+  fill: #434343;
+  stroke: #434343;
+  stroke-miterlimit: 10;
+}
+
+.cls2,
+.cls3 {
+  fill: none;
+  stroke: #434343;
+  stroke-linejoin: round;
+}
+.cls2 {
+  stroke-width: 0.5px;
+}
+.cls3 {
+  stroke-width: 0.25px;
+}
+
+.cls4 {
+  fill: none;
+  stroke: #434343;
+  stroke-miterlimit: 10;
+  stroke-width: 0.5px;
+}
+
+.cls5,
+.cls6 {
+  fill: none;
+  stroke: #434343;
+  stroke-width: 0.5px;
+}
+.cls5 {
+  stroke-miterlimit: 10;
+}
+.cls6 {
+  stroke-linejoin: round;
+}
+.cls7 {
+  fill: #434343;
+} */

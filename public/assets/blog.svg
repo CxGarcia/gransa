@@ -1,0 +1,37 @@
+<svg
+  id="Layer_1"
+  data-name="Layer 1"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 7.59 10.61"
+  width="20"
+>
+  <defs>
+    <style>
+      .cls-1,
+      .cls-2 {
+        fill: none;
+        stroke: #434343;
+        stroke-width: 0.5px;
+      }
+      .cls-1 {
+        stroke-miterlimit: 10;
+      }
+      .cls-2 {
+        stroke-linejoin: round;
+      }
+      .cls-3 {
+        fill: #434343;
+      }
+    </style>
+  </defs>
+  <title>blog</title>
+  <polygon
+    class="cls-1"
+    points="7.34 10.36 0.25 10.36 0.25 0.26 4.81 0.26 4.81 2.54 7.34 2.55 7.34 10.36"
+  />
+  <line class="cls-2" x1="4.89" y1="0.19" x2="7.41" y2="2.47" />
+  <rect class="cls-3" x="1.45" y="1.81" width="2.35" height="2.35" />
+  <line class="cls-1" x1="1.45" y1="5.52" x2="6.07" y2="5.52" />
+  <line class="cls-1" x1="1.45" y1="6.88" x2="6.07" y2="6.88" />
+  <line class="cls-1" x1="1.45" y1="8.24" x2="6.07" y2="8.24" />
+</svg>

@@ -1,0 +1,89 @@
+.mainLight,
+.mainDark {
+  width: 100vw;
+  position: absolute;
+  z-index: -2;
+  overflow-x: hidden;
+}
+
+.mainLight {
+  background-color: #fff;
+}
+.mainDark {
+  background-color: #0c0c2e;
+}
+
+.sectionLight,
+.sectionDark {
+  height: auto;
+  width: 100vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: -1;
+}
+
+.sectionLight {
+  background: url("../public/assets/hero.png") no-repeat fixed center 80%;
+  background-size: cover;
+}
+
+.sectionDark {
+  background: url("../public/assets/kukenan.svg") no-repeat fixed 35% center;
+  background-size: 175%;
+  background-blend-mode: difference;
+}
+
+@media (min-width: 900px) {
+  .mainLight,
+  .mainDark {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    overflow: hidden;
+    z-index: -2;
+  }
+
+  .sectionLight,
+  .sectionDark {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    color: white;
+    z-index: -1;
+  }
+
+  .sectionLight {
+    background: url("../public/assets/hero.png") no-repeat fixed center;
+    background-size: cover;
+  }
+
+  .sectionDark {
+    background: url("../public/assets/kukenan.svg") no-repeat fixed 35% center;
+    background-size: 175%;
+    background-blend-mode: difference;
+  }
+
+  .controlBar {
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    position: absolute;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .title {
+    font-weight: 100;
+    font-size: 5em;
+    padding-left: 8rem;
+    box-sizing: border-box;
+  }
+}
