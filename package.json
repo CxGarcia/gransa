@@ -11,9 +11,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@gsap/gsap": "4.1.2",
     "date-fns": "^2.15.0",
     "gray-matter": "^4.0.2",
-    "gsap": "^3.4.1",
+    "gsap": "file:gsap-bonus.tgz",
     "next": "9.5.1",
     "next-transpile-modules": "^4.0.2",
     "nprogress": "^0.2.0",
