@@ -11,7 +11,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@gsap/gsap": "4.1.2",
     "date-fns": "^2.15.0",
     "gray-matter": "^4.0.2",
     "gsap": "file:gsap-bonus.tgz",
