@@ -29,6 +29,7 @@ export default function Path() {
           scale: 1.2,
           yoyo: true,
           repeat: -1,
+          pin: true,
         });
       },
       onLeave: (batch) => {

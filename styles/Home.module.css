@@ -7,7 +7,7 @@
 }
 
 .mainLight {
-  background-color: #fff;
+  background-color: #f4eed4;
 }
 .mainDark {
   background-color: #0c0c2e;
@@ -64,8 +64,8 @@
   }
 
   .sectionDark {
-    background: url("../public/assets/kukenan.svg") no-repeat fixed 35% center;
-    background-size: 175%;
+    background: url("../public/assets/kukenan.svg") no-repeat fixed 40% bottom;
+    background-size: 150%;
     background-blend-mode: difference;
   }
 
