@@ -4,7 +4,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import DrawSVG from "gsap/dist/DrawSVGPlugin";
 import styles from "@styles/Path.module.css";
 
-export default function Path({ handleCoordinates }) {
+export default function Path({ handleActive, active }) {
   gsap.registerPlugin(ScrollTrigger, DrawSVG); //check if process is happening on client or server side
 
   const luepa = useRef(null);
@@ -15,39 +15,38 @@ export default function Path({ handleCoordinates }) {
   const activePoint = useRef(null);
 
   useEffect(() => {
-    // gsap.fromTo(
-    //   activePoint.current,
-    //   2,
-    //   {
-    //     display: "block",
-    //     transformOrigin: "center center",
-    //     scale: 0.8,
-    //     opacity: 1,
-    //     fill: "none",
-    //     strokeWidth: "0.5px",
-    //     stroke: "#303030",
-    //     stroke: 2,
-    //   },
-    //   {
-    //     scale: 1.3,
-    //     opacity: 0,
-    //     repeat: -1,
-    //   }
-    // );
+    const tl = gsap.timeline();
+
+    tl.fromTo(
+      activePoint.current,
+      2,
+      {
+        display: "block",
+        transformOrigin: "center center",
+        scale: 0.4,
+        opacity: 1,
+        fill: "#daa520",
+        strokeWidth: "2px",
+        stroke: "#daa520",
+      },
+      {
+        scale: 1.1,
+        opacity: 0,
+        repeat: 10,
+        ease: "power2.out",
+      }
+    );
 
     return function cleanup() {
-      console.log("cleanup");
+      tl.progress(1);
+      tl.kill();
     };
-  }, []);
+  }, [active]);
 
   function handleClick(event) {
     event.preventDefault();
-    // const lat = parseFloat(event.target.getAttribute("lat"));
-    // const lon = parseFloat(event.target.getAttribute("lon"));
-
     const point = event.target.getAttribute("name");
-    // handleCoordinates(lat, lon);
-    handleCoordinates(point);
+    handleActive(point);
   }
 
   return (
@@ -82,7 +81,7 @@ export default function Path({ handleCoordinates }) {
         </g>
         <g ref={luepa}>
           <path
-            ref={activePoint}
+            ref={active === "luepa" ? activePoint : null}
             className={styles.outerPoint}
             d="M249,10.75A1.81,1.81,0,1,1,247.23,9,1.79,1.79,0,0,1,249,10.75Z"
             transform="translate(-7.06 -8.7)"
@@ -100,6 +99,7 @@ export default function Path({ handleCoordinates }) {
         </g>
         <g id="toron">
           <path
+            ref={active === "toron" ? activePoint : null}
             className={styles.outerPoint}
             d="M135.14,43.84a1.81,1.81,0,1,1-1.79-1.8A1.79,1.79,0,0,1,135.14,43.84Z"
             transform="translate(-7.06 -8.7)"
@@ -117,6 +117,7 @@ export default function Path({ handleCoordinates }) {
         </g>
         <g id="aponwao">
           <path
+            ref={active === "aponwao" ? activePoint : null}
             className={styles.outerPoint}
             d="M202.41,115.43a1.81,1.81,0,1,1-1.79-1.8A1.8,1.8,0,0,1,202.41,115.43Z"
             transform="translate(-7.06 -8.7)"
@@ -134,6 +135,7 @@ export default function Path({ handleCoordinates }) {
         </g>
         <g id="chivaton">
           <path
+            ref={active === "chivaton" ? activePoint : null}
             className={styles.outerPoint}
             d="M132.89,107.25a1.81,1.81,0,1,1-1.79-1.81A1.81,1.81,0,0,1,132.89,107.25Z"
             transform="translate(-7.06 -8.7)"
@@ -151,6 +153,7 @@ export default function Path({ handleCoordinates }) {
         </g>
         <g id="mantopai">
           <path
+            ref={active === "mantopai" ? activePoint : null}
             className={styles.outerPoint}
             d="M61,78.94a1.8,1.8,0,0,1-3.6,0,1.8,1.8,0,0,1,3.6,0Z"
             transform="translate(-7.06 -8.7)"
@@ -168,6 +171,7 @@ export default function Path({ handleCoordinates }) {
         </g>
         <g id="kavanayen">
           <path
+            ref={active === "kavanayen" ? activePoint : null}
             className={styles.outerPoint}
             d="M68.76,109.18a1.81,1.81,0,1,1-1.79-1.8A1.8,1.8,0,0,1,68.76,109.18Z"
             transform="translate(-7.06 -8.7)"
@@ -185,6 +189,7 @@ export default function Path({ handleCoordinates }) {
         </g>
         <g id="karuay">
           <path
+            ref={active === "karuay" ? activePoint : null}
             className={styles.outerPoint}
             d="M10.92,61.17a1.81,1.81,0,1,1-1.79-1.8A1.79,1.79,0,0,1,10.92,61.17Z"
             transform="translate(-7.06 -8.7)"

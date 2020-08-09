@@ -4,20 +4,9 @@ import { FlyToInterpolator } from "react-map-gl";
 import Path from "@components/explore/Path";
 
 export default function Explore() {
-  const [coordinates, setCoordinates] = useState({
-    latitude: 5.8117667,
-    longitude: -61.4156333,
-  });
-
   const [active, setActive] = useState("luepa");
 
-  function handleCoordinates(point) {
-    // setActive({ point: point, lat: lat, lon: lon });
-    // setCoordinates({
-    //   latitude: lat,
-    //   longitude: lon,
-    //   active: "toron",
-    // });
+  function handleActive(point) {
     setActive(point);
   }
 
@@ -34,8 +23,8 @@ export default function Explore() {
 
   return (
     <div>
-      <Path handleCoordinates={handleCoordinates} />
-      <DynamicComponentWithNoSSR coordinates={coordinates} active={active} />
+      <Path handleActive={handleActive} active={active} />
+      <DynamicComponentWithNoSSR active={active} />
     </div>
   );
 }

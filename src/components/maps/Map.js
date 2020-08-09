@@ -17,7 +17,7 @@ function Map({ active }) {
     viewport: {
       width: 200,
       height: 200,
-      zoom: 15,
+      zoom: 14,
       latitude: 5.8117667,
       longitude: -61.4156333,
     },
