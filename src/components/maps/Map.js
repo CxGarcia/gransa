@@ -1,32 +1,38 @@
-import { useState, useRef } from "react";
-
+import React, { useState, useRef, useEffect } from "react";
 import ReactMapGL, { FlyToInterpolator } from "react-map-gl";
 import styles from "@styles/Map.module.css";
 
-export default function Map() {
-  const ref = useRef(null);
+function Map({ active }) {
+  const coordinates = {
+    luepa: [5.8117667, -61.4156333],
+    toron: [5.7286833, -61.6312333],
+    aponwao: [5.59685, -61.4946],
+    chivaton: [5.5947833, -61.6353667],
+    mantopai: [5.6483167, -61.7708167],
+    kavanayen: [5.5856, -61.7519667],
+    karuay: [5.6922833, -61.8605833],
+  };
+
   const [map, setMap] = useState({
     viewport: {
       width: 200,
       height: 200,
+      zoom: 15,
       latitude: 5.8117667,
       longitude: -61.4156333,
-      zoom: 11,
     },
   });
 
-  function handleClick(event) {
-    event.preventDefault();
-    const currentViewport = {
+  useEffect(() => {
+    const newViewport = {
       ...map.viewport,
-      latitude: +event.target.getAttribute("lat"),
-      longitude: +event.target.getAttribute("lon"),
-      transitionDuration: 5000,
+      latitude: coordinates[active][0],
+      longitude: coordinates[active][1],
       transitionInterpolator: new FlyToInterpolator(),
+      transitionDuration: 5000,
     };
-
-    setMap({ viewport: currentViewport });
-  }
+    setMap({ viewport: newViewport });
+  }, []);
 
   return (
     <div className={styles.map}>
@@ -36,10 +42,8 @@ export default function Map() {
         onViewportChange={(viewport) => setMap({ viewport })}
         {...map.viewport}
       />
-
-      <button onClick={handleClick} ref={ref} lat="5.6483167" lon="-61.7708167">
-        change coordinates
-      </button>
     </div>
   );
 }
+
+export default Map;

@@ -1,19 +1,26 @@
-.cls,
-.cls-2 {
-  fill: none;
-  stroke-miterlimit: 10;
-}
-.cls {
-  stroke: #ff0;
-  stroke-width: 6px;
-}
-.cls-2 {
-  stroke: #000;
+.container {
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 0 5.5rem;
 }
 
 .svg {
-  box-sizing: border-box;
-  width: 100vw;
-  padding-left: 8rem;
-  z-index: -10;
+  overflow: visible;
+}
+
+.route {
+  fill: none;
+  stroke: #303030;
+  stroke-miterlimit: 10;
+}
+.route {
+  stroke-width: 0.75px;
+}
+.outerPoint {
+  display: none;
+}
+.point {
+  z-index: 999;
+  fill: #303030;
+  cursor: pointer;
 }
