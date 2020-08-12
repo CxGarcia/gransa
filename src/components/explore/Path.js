@@ -38,6 +38,7 @@ export default function Path({ handleActive, active }) {
     );
 
     return function cleanup() {
+      //Finish and kill previous animation
       tl.progress(1);
       tl.kill();
     };

@@ -1,10 +1,12 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
-import { FlyToInterpolator } from "react-map-gl";
+import { getAllPosts } from "@api/getPosts";
 import Path from "@components/explore/Path";
 
-export default function Explore() {
+export default function Explore({ allPosts }) {
   const [active, setActive] = useState("luepa");
+
+  console.log(allPosts);
 
   function handleActive(point) {
     setActive(point);
@@ -27,4 +29,15 @@ export default function Explore() {
       <DynamicComponentWithNoSSR active={active} />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const allPosts = getAllPosts(
+    ["title", "date", "slug", "author", "coverImage", "excerpt"],
+    "_explore"
+  );
+
+  return {
+    props: { allPosts },
+  };
 }

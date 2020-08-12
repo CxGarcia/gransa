@@ -3,10 +3,12 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 
-const postsDirectory = join(process.cwd(), "_posts");
+let postsDirectory;
 //The process.cwd() method returns the current working directory of the Node.js process
 
-export function getPostSlugs() {
+export function getPostSlugs(dir) {
+  postsDirectory = join(process.cwd(), dir);
+
   return fs.readdirSync(postsDirectory);
   //Reads the contents of a directory.
 }
@@ -37,12 +39,19 @@ export function getPostBySlug(slug, fields = []) {
   return items;
 }
 
-export function getAllPosts(fields = []) {
-  const slugs = getPostSlugs();
+const sortBy = {
+  dateDescending: (post1, post2) => (post1.date > post2.date ? "-1" : "1"),
+  dateAscending: (post1, post2) => (post1.date > post2.date ? "1" : "-1"),
+  nameAscending: (post1, post2) => (post1.title > post2.title ? "-1" : "1"),
+  nameDescending: (post1, post2) => (post1.title > post2.title ? "1" : "-1"),
+};
+
+export function getAllPosts(fields = [], dir, sort) {
+  const slugs = getPostSlugs(dir);
 
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? "-1" : "1"));
+    .sort(sortBy[sort]);
   return posts;
 }

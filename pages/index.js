@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import dynamic from "next/dynamic";
 import styles from "@styles/Home.module.css";
-import { getAllPosts } from "./api/getPosts";
+import { getAllPosts } from "@api/getPosts";
 import PreviewContainer from "@components/post/preview-container";
 import Posts from "@components/post/posts";
 import { ReactComponent as Sun } from "@assets/sun-icon.svg";
@@ -45,14 +43,11 @@ export default function Home({ allPosts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt",
-  ]);
+  const allPosts = getAllPosts(
+    ["title", "date", "slug", "author", "coverImage", "excerpt"],
+    "_posts",
+    "dateDescending"
+  );
 
   return {
     props: { allPosts },
